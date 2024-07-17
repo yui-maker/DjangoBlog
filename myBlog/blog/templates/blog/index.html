@@ -1,19 +1,15 @@
+<!-- blog/templates/blog/index.html -->
 {% extends 'blog/base.html' %}
-
 {% block content %}
-<h2>Example body text</h2>
-<p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-<p><small>This line of text is meant to be treated as fine print.</small></p>
-<p>The following is <strong>rendered as bold text</strong>.</p>
-<p>The following is <em>rendered as italicized text</em>.</p>
-<p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
-
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h4 class="card-title">Primary card title</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  
+<h2>Home</h2>
+{% for content in contents %}
+    <article>
+        <h3>{{ content.title }}</h3>
+        <p>{{ content.description }}</p>
+        {% if content.image %}
+            <img src="{{ content.image.url }}" alt="{{ content.title }}">
+        {% endif %}
+    </article>
+{% endfor %}
 {% endblock %}
+

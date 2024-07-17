@@ -1,2 +1,4 @@
 .venv
 myBlog/myBlog/settings.py
+myBlog/db.sqlite3
+myBlog/media/

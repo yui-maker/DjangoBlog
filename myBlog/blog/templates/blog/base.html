@@ -1,4 +1,4 @@
-<!-- myapp/templates/myapp/base.html -->
+<!-- blog/templates/blog/base.html -->
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -22,16 +22,16 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'wood' %}">Wood</a>
+                <a class="nav-link" href="{% url 'category' 'wood' %}">Wood</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'printing' %}">3D-printing</a>
+                <a class="nav-link" href="{% url 'category' 'printing' %}">3D-printing</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'electronics' %}">Electronics</a>
+                <a class="nav-link" href="{% url 'category' 'electronics' %}">Electronics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'others' %}">Others</a>
+                <a class="nav-link" href="{% url 'category' 'others' %}">Others</a>
               </li>
             </ul>
             <form class="d-flex">

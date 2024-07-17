@@ -1,5 +1,14 @@
+<!-- blog/templates/blog/wood.html -->
 {% extends 'blog/base.html' %}
 {% block content %}
-<h2>Wood</h2>
-<p>Welcome to the wood-related page.</p>
+<h2>Wood Related</h2>
+{% for content in contents %}
+    <article>
+        <h3>{{ content.title }}</h3>
+        <p>{{ content.description }}</p>
+        {% if content.image %}
+            <img src="{{ content.image.url }}" alt="{{ content.title }}">
+        {% endif %}
+    </article>
+{% endfor %}
 {% endblock %}
